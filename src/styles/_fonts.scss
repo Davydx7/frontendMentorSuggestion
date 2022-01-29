@@ -1,0 +1,40 @@
+@use "variables" // TYPOGRAPHY
+  @import
+  url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap");
+//----------------------------------------
+
+// Typeface
+$sans-serif: "jost", sans-serif;
+$serif: "Times New Roman", serif;
+
+// Font weights
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;
+
+body {
+  font-family: $sans-serif;
+  color: $txt-primary; //color variable set elsewhere
+  background: $body-bg;
+  -webkit-text-size-adjust: 100%; //fix for iOS
+}
+
+// Body Paragraph Styles
+@mixin body-1 {
+  font-size: 16px;
+  font-weight: $normal;
+  line-height: 23px;
+}
+
+@mixin body-2 {
+  font-size: 15px;
+  font-weight: $normal;
+  line-height: 22px;
+}
+
+@mixin body-3 {
+  font-size: 13px;
+  font-weight: $semibold;
+  line-height: 19px;
+}
