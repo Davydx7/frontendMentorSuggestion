@@ -1,5 +1,5 @@
 module.exports = {
-	devtool: 'source-map',
-	plugins: [],
-	mode: 'production',
+    devtool: 'source-map',
+    plugins: [],
+    mode: 'production'
 };
