@@ -1,0 +1,46 @@
+// COLORS
+
+//----------------------------------------
+
+// Main colors
+$white: #ffffff;
+$primary-purple: #ad1fea !default;
+$primary-blue: #4661e6 !default;
+$dark-100: #373f68 !default;
+$dark-200: #3a4374 !default;
+$dark-300: #647196 !default;
+$light-100: #f2f4ff !default;
+$light-200: #f7f8fd !default;
+$light-orange: #f49f85 !default;
+$light-blue: #62bcfa !default;
+$red: #d73737 !default;
+
+// Buttons
+$btn-primary: $primary-purple !default;
+$btn-primary-hover: #c75af6 !default;
+$btn-secondary: $primary-blue !default;
+$btn-secondary-hover: #7c91f9 !default;
+$btn-dark: $dark-200 !default;
+$btn-dark-hover: #656ea3 !default;
+$btn-delete: $red !default;
+$btn-delete-hover: #e98888 !default;
+
+// Texts
+$txt-primary: $dark-200 !default;
+$txt-secondary: $dark-300 !default;
+
+// Tags and Vote
+$tag-default: $light-100 !default;
+$tag-hover: #cfd7ff !default;
+$tag-active: $primary-blue !default;
+
+// Form elements
+$form-field: $light-200 !default;
+$form-txt: $dark-200 !default;
+$form-active: $primary-blue !default;
+$form-error: $red !default;
+
+// Dropdown
+$dd-txt: $dark-300 !default;
+$dd-hover: $primary-purple !default;
+$dd-line: rgba($dark-200, 0.15) !default;
