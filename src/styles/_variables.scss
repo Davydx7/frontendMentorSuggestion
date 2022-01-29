@@ -35,12 +35,13 @@ $tag-hover: #cfd7ff !default;
 $tag-active: $primary-blue !default;
 
 // Form elements
-$form-field: $light-200 !default;
+$form-background: $light-200 !default;
 $form-txt: $dark-200 !default;
-$form-active: $primary-blue !default;
-$form-error: $red !default;
+$form-active-border: $primary-blue !default;
+$form-error-border: $red !default;
+$form-error-txt: $red !default;
 
 // Dropdown
-$dd-txt: $dark-300 !default;
-$dd-hover: $primary-purple !default;
-$dd-line: rgba($dark-200, 0.15) !default;
+$dropdown-txt: $dark-300 !default;
+$dropdown-hover: $primary-purple !default;
+$dropdown-line: rgba($dark-200, 0.15) !default;
