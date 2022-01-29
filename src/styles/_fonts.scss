@@ -1,11 +1,11 @@
 // TYPOGRAPHY
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
 
 //----------------------------------------
 
 // Typeface
-$sans-serif: "jost", sans-serif;
-$serif: "Times New Roman", serif;
+$sans-serif: 'jost', sans-serif;
+$serif: 'Times New Roman', serif;
 
 // Font weights
 $font-weight-light: 300;
@@ -20,54 +20,54 @@ $font-size-large: 20px;
 
 // Main Typography
 body {
-  font-family: $sans-serif;
-  font-size: 16px;
-  color: $txt-secondary;
+    font-family: $sans-serif;
+    font-size: 16px;
+    color: $txt-secondary;
 }
 
 h1 {
-  font-size: 24px;
-  font-weight: $bold;
-  line-height: 35px;
-  letter-spacing: -0.3333px;
+    font-size: 24px;
+    font-weight: $bold;
+    line-height: 35px;
+    letter-spacing: -0.3333px;
 }
 
 h2 {
-  font-size: 20px;
-  font-weight: $bold;
-  line-height: 29px;
-  letter-spacing: -0.25px;
+    font-size: 20px;
+    font-weight: $bold;
+    line-height: 29px;
+    letter-spacing: -0.25px;
 }
 
 h3 {
-  font-size: 18px;
-  font-weight: $bold;
-  line-height: 16px;
-  letter-spacing: -0.25px;
+    font-size: 18px;
+    font-weight: $bold;
+    line-height: 16px;
+    letter-spacing: -0.25px;
 }
 
 h4 {
-  font-size: 14px;
-  font-weight: $bold;
-  line-height: 20px;
-  letter-spacing: -0.2px;
+    font-size: 14px;
+    font-weight: $bold;
+    line-height: 20px;
+    letter-spacing: -0.2px;
 }
 
 // Body Paragraph Styles
 @mixin body-1 {
-  font-size: 16px;
-  font-weight: $normal;
-  line-height: 23px;
+    font-size: 16px;
+    font-weight: $normal;
+    line-height: 23px;
 }
 
 @mixin body-2 {
-  font-size: 15px;
-  font-weight: $normal;
-  line-height: 22px;
+    font-size: 15px;
+    font-weight: $normal;
+    line-height: 22px;
 }
 
 @mixin body-3 {
-  font-size: 13px;
-  font-weight: $semibold;
-  line-height: 19px;
+    font-size: 13px;
+    font-weight: $semibold;
+    line-height: 19px;
 }
