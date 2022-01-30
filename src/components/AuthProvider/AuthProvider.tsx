@@ -2,7 +2,6 @@ import React, { createContext, useState } from 'react';
 
 import { AuthContext } from './typings';
 
-
 export const AUTH_CONEXT = createContext<AuthContext | undefined>(undefined);
 
 const AuthProvider: React.FC = (props) => {
