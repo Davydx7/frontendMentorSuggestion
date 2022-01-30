@@ -1,5 +1,6 @@
 // TYPOGRAPHY
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+@import './variables';
 
 //----------------------------------------
 
@@ -9,9 +10,9 @@ $serif: 'Times New Roman', serif;
 
 // Font weights
 $font-weight-light: 300;
-$font-weitht-normal: 400;
-$font-weitht-semibold: 500;
-$font-weitht-bold: 700;
+$font-weight-normal: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 700;
 
 // Font size
 $font-size-small: 14px;
@@ -27,28 +28,28 @@ body {
 
 h1 {
     font-size: 24px;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
     line-height: 35px;
     letter-spacing: -0.3333px;
 }
 
 h2 {
     font-size: 20px;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
     line-height: 29px;
     letter-spacing: -0.25px;
 }
 
 h3 {
     font-size: 18px;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
     line-height: 16px;
     letter-spacing: -0.25px;
 }
 
 h4 {
     font-size: 14px;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
     line-height: 20px;
     letter-spacing: -0.2px;
 }
@@ -56,18 +57,18 @@ h4 {
 // Body Paragraph Styles
 @mixin body-1 {
     font-size: 16px;
-    font-weight: $normal;
+    font-weight: $font-weight-normal;
     line-height: 23px;
 }
 
 @mixin body-2 {
     font-size: 15px;
-    font-weight: $normal;
+    font-weight: $font-weight-normal;
     line-height: 22px;
 }
 
 @mixin body-3 {
     font-size: 13px;
-    font-weight: $semibold;
+    font-weight: $font-weight-semibold;
     line-height: 19px;
 }
