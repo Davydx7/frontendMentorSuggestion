@@ -1,23 +1,7 @@
 // TYPOGRAPHY
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+
 @import './variables';
-
-//----------------------------------------
-
-// Typeface
-$sans-serif: 'jost', sans-serif;
-$serif: 'Times New Roman', serif;
-
-// Font weights
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-semibold: 500;
-$font-weight-bold: 700;
-
-// Font size
-$font-size-small: 14px;
-$font-size-normal: 16px;
-$font-size-large: 20px;
 
 // Main Typography
 body {

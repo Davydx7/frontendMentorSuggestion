@@ -45,3 +45,22 @@ $form-error-txt: $red !default;
 $dropdown-txt: $dark-300 !default;
 $dropdown-hover: $primary-purple !default;
 $dropdown-line: rgba($dark-200, 0.15) !default;
+
+// Font
+
+//----------------------------------------
+
+// Typeface
+$sans-serif: 'jost', sans-serif;
+$serif: 'Times New Roman', serif;
+
+// Font weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 700;
+
+// Font size
+$font-size-small: 14px;
+$font-size-normal: 16px;
+$font-size-large: 20px;
