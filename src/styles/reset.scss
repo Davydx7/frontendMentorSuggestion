@@ -1,8 +1,8 @@
-@import './reset.scss';
-@import './fonts';
+@import url('./normalize.css');
 
 ul,
 li {
     margin: 0;
+    padding: 0;
     list-style: none;
 }
