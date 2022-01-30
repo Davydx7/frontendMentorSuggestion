@@ -9,14 +9,13 @@ export default {
 	title: 'Dropdown',
 } as ComponentMeta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof Dropdown> = (args) => (
-	<Dropdown {...args} />
-);
+const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
 
 export const FirstStory = Template.bind({});
 
 FirstStory.args = {
 	closeOnSelect: true,
+	isOpen: true,
 	onSelect: (option: Option) => {
 		// eslint-disable-next-line no-console
 		console.info(option);
