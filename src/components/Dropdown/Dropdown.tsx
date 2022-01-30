@@ -39,7 +39,9 @@ const Dropdown: React.FC<Props> = ({
 		<OutsideClickHandler onOutsideClick={() => setIsOpen(false)}>
 			<div className={classNames('dropdown', wrapperClassName)}>
 				<button
-					className="dropdown__toggle-btn"
+					className={classNames('dropdown__toggle-btn', {
+						'--active': isOpen,
+					})}
 					onClick={() => setIsOpen((prevState) => !prevState)}
 					type="button"
 				>

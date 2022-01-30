@@ -19,7 +19,8 @@
 			padding-right: 16px;
 		}
 
-		&:hover {
+		&:hover,
+		&.--active {
 			border: 1px solid $primary-blue;
 		}
 	}
