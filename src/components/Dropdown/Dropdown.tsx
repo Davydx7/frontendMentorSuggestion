@@ -17,12 +17,13 @@ const Dropdown: React.FC<Props> = ({
 	options = [],
 	placehoderText = 'Please select',
 	selected: initialSelected,
+	wrapperClassName,
 }) => {
 	const [isOpen, setIsOpen] = useState<boolean>(initialIsOpen);
 	const [selected, setSelected] = useState<Option | undefined>(initialSelected);
 
 	if (!options.length) {
-		return <p>Please provide dropdown options</p>;
+		return <p className="dropdown --error">Please provide dropdown options.</p>;
 	}
 
 	const handleSelect = (option: Option) => {
@@ -35,8 +36,8 @@ const Dropdown: React.FC<Props> = ({
 	};
 
 	return (
-		<div className="dropdown">
-			<OutsideClickHandler onOutsideClick={() => setIsOpen(false)}>
+		<OutsideClickHandler onOutsideClick={() => setIsOpen(false)}>
+			<div className={classNames('dropdown', wrapperClassName)}>
 				<button
 					className="dropdown__toggle-btn"
 					onClick={() => setIsOpen((prevState) => !prevState)}
@@ -71,8 +72,8 @@ const Dropdown: React.FC<Props> = ({
 						})}
 					</ul>
 				)}
-			</OutsideClickHandler>
-		</div>
+			</div>
+		</OutsideClickHandler>
 	);
 };
 

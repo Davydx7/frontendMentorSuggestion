@@ -10,4 +10,5 @@ export type Props = {
 	options: Option[];
 	placehoderText?: string;
 	selected?: Option;
+	wrapperClassName?: string;
 };
