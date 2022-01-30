@@ -1,8 +1,8 @@
 {
-  "name": "react-typescript-webpack-starter",
+  "name": "frontendmentor-product-feedback-frontend-codebase",
   "licenses": [],
   "version": "1.0.0",
-  "description": "A starter template for React with Typescript using Webpack 5",
+  "description": "Frontendmentor product feedback project, frontend codebase",
   "scripts": {
     "dev": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
@@ -13,7 +13,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@okta/okta-signin-widget": "~5.11.1",
     "axios": "^0.24.0",
     "classnames": "^2.3.1",
     "postcss-loader": "^6.2.1",
