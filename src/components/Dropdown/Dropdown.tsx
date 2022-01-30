@@ -48,7 +48,7 @@ const Dropdown: React.FC<Props> = ({
 					<span>{selected ? selected.label : placehoderText}</span>
 					<img
 						alt={`dropdown-is-${isOpen ? 'opened' : 'closed'}`}
-						src={isOpen ? IconArrowDown : IconArrowUp}
+						src={isOpen ? IconArrowUp : IconArrowDown}
 					/>
 				</button>
 				{isOpen && (
