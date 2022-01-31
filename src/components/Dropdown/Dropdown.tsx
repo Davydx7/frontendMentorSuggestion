@@ -40,7 +40,7 @@ const Dropdown: React.FC<Props> = ({
 			<div className={classNames('dropdown', wrapperClassName)}>
 				<button
 					className={classNames('dropdown__toggle-btn', {
-						'--active': isOpen,
+						'--is-open': isOpen,
 					})}
 					onClick={() => setIsOpen((prevState) => !prevState)}
 					type="button"
