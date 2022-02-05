@@ -11,9 +11,9 @@ export default {
 
 const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
 
-export const FirstStory = Template.bind({});
+export const Default = Template.bind({});
 
-FirstStory.args = {
+Default.args = {
 	closeOnSelect: true,
 	isOpen: true,
 	onSelect: (option: Option) => {
@@ -30,7 +30,7 @@ FirstStory.args = {
 			value: 'planned',
 		},
 		{
-			label: <span>In-Progress</span>,
+			label: <span>In Progress</span>,
 			value: 'inProgress',
 		},
 		{
