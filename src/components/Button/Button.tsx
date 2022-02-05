@@ -20,9 +20,9 @@ const Button: React.FC<Props> = ({
 
 	return type === 'link'
 		? (
-			<Link className="btn btn-link" to={to!}>
+			<Link className="btn btn--link" to={to!}>
 				<img alt={text} src={ArrowLeft} />
-				{children || text}
+				{children || <span>{text}</span>}
 			</Link>
 		)
 		: (
