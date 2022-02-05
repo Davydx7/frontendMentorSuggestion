@@ -18,3 +18,10 @@ Default.args = {
 	text: '+ Add Feedback',
 	type: 'secondary',
 };
+
+export const LinkButton = Template.bind({});
+LinkButton.args = {
+	text: 'go back',
+	to: '/',
+	type: 'link',
+};
