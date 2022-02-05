@@ -1,0 +1,37 @@
+.button {
+	max-width: 456px;
+	font-size: 14px;
+	font-weight: $font-weight-bold;
+	line-height: 20px;
+	padding: 12px 24px;
+	color: $white;
+	border-radius: 10px;
+
+	&.primary {
+		background-color: $btn-primary;
+		&:hover {
+			background-color: $btn-primary-hover;
+		}
+	}
+
+	&.secondary {
+		background-color: $btn-secondary;
+		&:hover {
+			background-color: $btn-secondary-hover;
+		}
+	}
+
+	&.cancel {
+		background-color: $btn-cancel;
+		&:hover {
+			background-color: $btn-cancel-hover;
+		}
+	}
+
+	&.danger {
+		background-color: $btn-danger;
+		&:hover {
+			background-color: $btn-danger-hover;
+		}
+	}
+}
