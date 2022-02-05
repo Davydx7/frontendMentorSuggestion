@@ -9,13 +9,7 @@ export default {
 	title: 'Dropdown',
 } as ComponentMeta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
-
-export const Default = Template.bind({});
-
-Default.args = {
-	closeOnSelect: true,
-	isOpen: true,
+const SHARED_ARGS = {
 	onSelect: (option: Option) => {
 		// eslint-disable-next-line no-console
 		console.info(option);
@@ -39,4 +33,24 @@ Default.args = {
 		},
 	],
 	placehoderText: 'Please select',
+};
+
+const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
+
+export const Default = Template.bind({});
+
+Default.args = {
+	...SHARED_ARGS,
+};
+
+export const CloseOnSelect = Template.bind({});
+CloseOnSelect.args = {
+	...SHARED_ARGS,
+	closeOnSelect: true,
+};
+
+export const DefaultSelected = Template.bind({});
+DefaultSelected.args = {
+	...SHARED_ARGS,
+	selected: SHARED_ARGS.options[0],
 };
