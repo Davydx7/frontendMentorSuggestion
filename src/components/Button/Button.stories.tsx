@@ -10,9 +10,9 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const FirstStory = Template.bind({});
+export const Default = Template.bind({});
 
-FirstStory.args = {
+Default.args = {
 	// eslint-disable-next-line no-console
 	onClick: () => console.log('clicked'),
 	text: '+ Add Feedback',
