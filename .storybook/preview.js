@@ -1,4 +1,5 @@
 import '../src/styles/main.scss';
+import StorybookProvider from './decorators/Provider';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -17,4 +18,6 @@ export const parameters = {
       propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
     },
   },
-}
+};
+
+export const decorators = [StorybookProvider];
