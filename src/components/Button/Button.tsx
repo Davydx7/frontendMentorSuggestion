@@ -7,18 +7,9 @@ import { Props } from './typings';
 
 import './Button.scss';
 
-const Button = ({ onClick, text = 'Button Text', type = 'primary' }: Props) => (
-	<button
-		className={classNames('button', {
-			cancel: type === 'cancel',
-			danger: type === 'danger',
-			primary: type === 'primary',
-			secondary: type === 'secondary',
-		})}
-		onClick={onClick}
-		type="button"
-	>
-		{text}
+const Button: React.FC<Props> = ({ children, onClick, text = 'Button Text', type = 'primary' }) => (
+	<button className={classNames('btn', `${type}`)} onClick={onClick} type="button">
+		{children || text}
 	</button>
 );
 

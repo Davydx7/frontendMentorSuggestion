@@ -1,8 +1,6 @@
-import React from 'react';
-
 export type Props = {
 	// color: string;
-	text: string | React.ReactNode;
+	text?: string;
 	type?: 'primary' | 'secondary' | 'danger' | 'cancel';
 	onClick?: () => void;
 };
