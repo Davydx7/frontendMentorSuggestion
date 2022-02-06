@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
 
 import { Option, Props } from './typings';
@@ -21,6 +21,20 @@ const Dropdown: React.FC<Props> = ({
 }) => {
 	const [isOpen, setIsOpen] = useState<boolean>(initialIsOpen);
 	const [selected, setSelected] = useState<Option | undefined>(initialSelected);
+
+	const dropdownMenuRef = useRef<HTMLUListElement | null>(null);
+
+	useLayoutEffect(() => {
+		if (dropdownMenuRef.current) {
+			const $menuItems = dropdownMenuRef.current.getElementsByTagName('li');
+			const maxEleWidth = Array.from($menuItems).reduce(
+				(maxWidth, $curItem) => Math.max(maxWidth, $curItem.getBoundingClientRect().width),
+				0
+			);
+
+			dropdownMenuRef.current.style.minWidth = `${(maxEleWidth + 24).toFixed(0)}px`;
+		}
+	}, []);
 
 	if (!options.length) {
 		return <p className="dropdown --error">Please provide dropdown options.</p>;
@@ -51,29 +65,27 @@ const Dropdown: React.FC<Props> = ({
 						src={isOpen ? IconArrowUp : IconArrowDown}
 					/>
 				</button>
-				{isOpen && (
-					<ul className="dropdown__options">
-						{options.map(({ label, value }) => {
-							const isSelected = value === selected?.value;
+				<ul className="dropdown__options" ref={dropdownMenuRef}>
+					{options.map(({ label, value }) => {
+						const isSelected = value === selected?.value;
 
-							return (
-								<li
-									aria-label={value}
-									className={classNames('dropdown__option', {
-										'--selected': isSelected,
-									})}
-									key={value}
-									onClick={() => {
-										handleSelect({ label, value });
-									}}
-								>
-									{label}
-									{isSelected && <img alt="selected" src={IconCheck} />}
-								</li>
-							);
-						})}
-					</ul>
-				)}
+						return (
+							<li
+								aria-label={value}
+								className={classNames('dropdown__option', {
+									'--selected': isSelected,
+								})}
+								key={value}
+								onClick={() => {
+									handleSelect({ label, value });
+								}}
+							>
+								{label}
+								{isSelected && <img alt="selected" className="selected-icon" src={IconCheck} />}
+							</li>
+						);
+					})}
+				</ul>
 			</div>
 		</OutsideClickHandler>
 	);
