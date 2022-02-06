@@ -34,7 +34,7 @@ const Dropdown: React.FC<Props> = ({
 
 			dropdownMenuRef.current.style.minWidth = `${(maxEleWidth + 24).toFixed(0)}px`;
 		}
-	}, []);
+	}, [isOpen, options]);
 
 	if (!options.length) {
 		return <p className="dropdown --error">Please provide dropdown options.</p>;
@@ -65,7 +65,12 @@ const Dropdown: React.FC<Props> = ({
 						src={isOpen ? IconArrowUp : IconArrowDown}
 					/>
 				</button>
-				<ul className="dropdown__options" ref={dropdownMenuRef}>
+				<ul
+					className={classNames('dropdown__options', {
+						'--visible': isOpen,
+					})}
+					ref={dropdownMenuRef}
+				>
 					{options.map(({ label, value }) => {
 						const isSelected = value === selected?.value;
 
