@@ -83,6 +83,7 @@ module.exports = {
 				checkForEach: false,
 			},
 		],
+		'linebreak-style': 0,
 		'arrow-parens': 0,
 		'class-methods-use-this': 1,
 		'comma-dangle': 0,
