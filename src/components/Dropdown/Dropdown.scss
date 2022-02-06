@@ -20,7 +20,7 @@
 		}
 
 		&:hover,
-		&.--active {
+		&.--is-open {
 			border: 1px solid $primary-blue;
 		}
 	}
