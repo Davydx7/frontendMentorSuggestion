@@ -39,29 +39,31 @@ module.exports = {
 				use: ['style-loader', 'css-loader', 'sass-loader'],
 			},
 			{
-                test: /\.scss$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'postcss-loader',
-                    'sass-loader',
-                    {
-                        loader: 'sass-resources-loader',
-                        options: {
-                            resources: [
-                                path.resolve(__dirname, '../src/styles/_variables.scss'),
-                            ]
-                        },
-                    },
-                ],
-            },
+				test: /\.scss$/,
+				use: [
+					'style-loader',
+					'css-loader',
+					'postcss-loader',
+					'sass-loader',
+					{
+						loader: 'sass-resources-loader',
+						options: {
+							resources: [path.resolve(__dirname, '../src/styles/_variables.scss')],
+						},
+					},
+				],
+			},
 			{
 				test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
 				type: 'asset/resource',
 			},
 			{
-				test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+				test: /\.(woff(2)?|eot|ttf|otf|)$/,
 				type: 'asset/inline',
+			},
+			{
+				test: /\.svg$/,
+				use: ['@svgr/webpack'],
 			},
 		],
 	},
