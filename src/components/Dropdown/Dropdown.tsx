@@ -69,32 +69,34 @@ const Dropdown: React.FC<Props> = ({
 					<span>{selected ? selected.label : placehoderText}</span>
 					{isOpen ? <IconArrowUp /> : <IconArrowDown />}
 				</button>
-				<ul
-					className={classNames('dropdown__options', {
-						'--visible': isOpen,
-					})}
-					ref={dropdownMenuRef}
-				>
-					{options.map(({ label, value }) => {
-						const isSelected = value === selected?.value;
+				{isOpen && (
+					<ul
+						className={classNames('dropdown__options', {
+							'--visible': isOpen,
+						})}
+						ref={dropdownMenuRef}
+					>
+						{options.map(({ label, value }) => {
+							const isSelected = value === selected?.value;
 
-						return (
-							<li
-								aria-label={value}
-								className={classNames('dropdown__option', {
-									'--selected': isSelected,
-								})}
-								key={value}
-								onClick={() => {
-									handleSelect({ label, value });
-								}}
-							>
-								<div className="label">{label}</div>
-								{isSelected && <IconCheck />}
-							</li>
-						);
-					})}
-				</ul>
+							return (
+								<li
+									aria-label={value}
+									className={classNames('dropdown__option', {
+										'--selected': isSelected,
+									})}
+									key={value}
+									onClick={() => {
+										handleSelect({ label, value });
+									}}
+								>
+									<div className="label">{label}</div>
+									{isSelected && <IconCheck />}
+								</li>
+							);
+						})}
+					</ul>
+				)}
 			</div>
 		</OutsideClickHandler>
 	);
