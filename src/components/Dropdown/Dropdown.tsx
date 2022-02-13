@@ -26,13 +26,20 @@ const Dropdown: React.FC<Props> = ({
 
 	useLayoutEffect(() => {
 		if (dropdownMenuRef.current) {
-			const $menuItems = dropdownMenuRef.current.getElementsByTagName('li');
-			const maxEleWidth = Array.from($menuItems).reduce(
-				(maxWidth, $curItem) => Math.max(maxWidth, $curItem.getBoundingClientRect().width),
+			const $menuItems = dropdownMenuRef.current.querySelectorAll('li .label');
+			const maxWidth = Array.from($menuItems).reduce(
+				(curMaxWidth, $curItem) => Math.max(curMaxWidth, $curItem.getBoundingClientRect().width),
 				0
 			);
 
-			dropdownMenuRef.current.style.minWidth = `${(maxEleWidth + 24).toFixed(0)}px`;
+			const currentWidth = parseInt(dropdownMenuRef.current.style.width, 10);
+
+			if (Number.isNaN(currentWidth)) {
+				// padding-left padding-right, the padding-left of checkIcon, and the width of the checkIcon
+				const width = parseInt(`${maxWidth + 80}`, 10);
+
+				dropdownMenuRef.current.style.minWidth = `${width}px`;
+			}
 		}
 	}, [isOpen, options]);
 
@@ -82,7 +89,7 @@ const Dropdown: React.FC<Props> = ({
 									handleSelect({ label, value });
 								}}
 							>
-								{label}
+								<div className="label">{label}</div>
 								{isSelected && <IconCheck />}
 							</li>
 						);
