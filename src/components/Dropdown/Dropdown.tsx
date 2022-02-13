@@ -60,10 +60,7 @@ const Dropdown: React.FC<Props> = ({
 					type="button"
 				>
 					<span>{selected ? selected.label : placehoderText}</span>
-					<img
-						alt={`dropdown-is-${isOpen ? 'opened' : 'closed'}`}
-						src={isOpen ? IconArrowUp : IconArrowDown}
-					/>
+					{isOpen ? <IconArrowUp /> : <IconArrowDown />}
 				</button>
 				<ul
 					className={classNames('dropdown__options', {
@@ -86,7 +83,7 @@ const Dropdown: React.FC<Props> = ({
 								}}
 							>
 								{label}
-								{isSelected && <img alt="selected" className="selected-icon" src={IconCheck} />}
+								{isSelected && <IconCheck />}
 							</li>
 						);
 					})}

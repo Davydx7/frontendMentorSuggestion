@@ -36,12 +36,13 @@
 	}
 
 	&__option {
-		color: $dark-300;
-		cursor: pointer;
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 		padding: 12px 24px;
 		position: relative;
+		color: $dark-300;
+		cursor: pointer;
 
 		.selected-icon {
 			width: 11px;
