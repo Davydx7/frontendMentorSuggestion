@@ -26,20 +26,22 @@ const Dropdown: React.FC<Props> = ({
 
 	useLayoutEffect(() => {
 		if (dropdownMenuRef.current) {
+			const currentMinWidth = parseInt(dropdownMenuRef.current.style.minWidth, 10);
+
+			if (!Number.isNaN(currentMinWidth)) {
+				return;
+			}
+
 			const $menuItems = dropdownMenuRef.current.querySelectorAll('li .label');
 			const maxWidth = Array.from($menuItems).reduce(
 				(curMaxWidth, $curItem) => Math.max(curMaxWidth, $curItem.getBoundingClientRect().width),
 				0
 			);
 
-			const currentWidth = parseInt(dropdownMenuRef.current.style.width, 10);
+			// 80: is the sum of other elements' width inside the li tag
+			const width = parseInt(`${maxWidth + 80}`, 10);
 
-			if (Number.isNaN(currentWidth)) {
-				// padding-left padding-right, the padding-left of checkIcon, and the width of the checkIcon
-				const width = parseInt(`${maxWidth + 80}`, 10);
-
-				dropdownMenuRef.current.style.minWidth = `${width}px`;
-			}
+			dropdownMenuRef.current.style.minWidth = `${width}px`;
 		}
 	}, [isOpen, options]);
 
