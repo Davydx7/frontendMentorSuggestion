@@ -1,0 +1,23 @@
+.tag {
+	padding: 5px 15px;
+	border-radius: 10px;
+	color: $primary-blue;
+	background-color: $tag-default;
+	font-size: 13px;
+	font-weight: $font-weight-bold;
+	transition: all 0.1s ease-in-out;
+
+	&.--clickable {
+		cursor: pointer;
+
+		&:hover {
+			background-color: $tag-hover;
+		}
+
+		&:active,
+		&.--selected {
+			color: $white;
+			background-color: $tag-active;
+		}
+	}
+}
