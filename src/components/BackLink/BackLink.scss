@@ -1,0 +1,20 @@
+.link {
+	text-decoration: none;
+	&:hover {
+		& span {
+			text-decoration: underline;
+		}
+	}
+
+	&.dark {
+		color: $dark-300;
+	}
+
+	&.light {
+		color: $white;
+
+		& path {
+			stroke: $light-100;
+		}
+	}
+}
