@@ -13,7 +13,7 @@ import './Header.scss';
 
 const Header: React.FC<Props> = ({ type = 'suggestion' }) => (
 	<div className={classNames('header', `--${type}`)}>
-		{type === 'suggestion'
+		{(type === 'suggestion')
 			? (
 				<React.Fragment>
 					<IconBulb className="icon_bulb" />
