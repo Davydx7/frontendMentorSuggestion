@@ -6,22 +6,22 @@ import { Props } from './typings';
 
 const Tag: React.FC<Props> = ({
 	children,
-	clickable = 'false',
+	clickable = false,
 	isSelected = false,
 	label,
 	onClick,
 }) => {
 	const [selected, setSelected] = useState(isSelected);
 
-	const handleSelect = () => {
-		if (onClick) onClick();
-		setSelected((prevState) => !prevState);
+	const handleClick = () => {
+		onClick?.();
+		setSelected(!selected);
 	};
 
 	return (
 		<span
 			className={classNames('tag', { '--clickable': clickable, '--selected': selected })}
-			onClick={handleSelect}
+			onClick={handleClick}
 			role={clickable ? 'button' : 'status'}
 		>
 			{children || label}
