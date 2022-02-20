@@ -23,6 +23,7 @@ Voted.args = {
 	hasVoted: true,
 	// eslint-disable-next-line no-console
 	onClick: () => console.log('clicked'),
+	voteCount: 74,
 };
 
 export const Row = Template.bind({});

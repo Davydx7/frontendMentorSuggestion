@@ -6,7 +6,7 @@ import { Props } from './typings';
 
 import IconArrowUp from 'assets/shared/icon-arrow-up.svg';
 
-const Vote: React.FC<Props> = ({ hasVoted = false, onClick, row = false }) => {
+const Vote: React.FC<Props> = ({ hasVoted = false, onClick, row = false, voteCount = 0 }) => {
 	const [voted, setVoted] = useState(hasVoted);
 
 	const handleSelect = () => {
@@ -21,7 +21,7 @@ const Vote: React.FC<Props> = ({ hasVoted = false, onClick, row = false }) => {
 			type="button"
 		>
 			<IconArrowUp />
-			<span>75</span>
+			<span>{voteCount}</span>
 		</button>
 	);
 };
