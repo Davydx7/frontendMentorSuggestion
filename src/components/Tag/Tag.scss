@@ -3,8 +3,10 @@
 	border-radius: 10px;
 	color: $primary-blue;
 	background-color: $tag-default;
+	//@include body-3;
 	font-size: 13px;
 	font-weight: $font-weight-bold;
+	line-height: 19px;
 	transition: all 0.1s ease-in-out;
 
 	&.--clickable {
