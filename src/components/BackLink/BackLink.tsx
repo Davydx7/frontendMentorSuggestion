@@ -7,8 +7,8 @@ import { Props } from './typings';
 
 import IconArrowLeft from 'assets/shared/icon-arrow-left.svg';
 
-const BackLink: React.FC<Props> = ({ type = 'dark' }) => (
-	<Link className={classNames('link', `${type}`)} to="/">
+const BackLink: React.FC<Props> = ({ to = '/', type = 'dark' }) => (
+	<Link className={classNames('link', `${type}`)} to={to}>
 		<IconArrowLeft />
 		{' '}
 		<span>Go back</span>

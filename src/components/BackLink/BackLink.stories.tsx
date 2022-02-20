@@ -13,11 +13,13 @@ const Template: ComponentStory<typeof BackLink> = (args) => <BackLink {...args} 
 export const Dark = Template.bind({});
 
 Dark.args = {
+	to: '/',
 	type: 'dark',
 };
 
 export const Light = Template.bind({});
 
 Light.args = {
+	to: '/',
 	type: 'light',
 };
