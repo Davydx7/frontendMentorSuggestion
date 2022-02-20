@@ -3,7 +3,6 @@
 	flex-direction: column;
 	gap: 24px;
 	width: 255px;
-	// overflow: hidden;
 	
 	& > div {
 		padding: 24px;
@@ -18,12 +17,68 @@
 		justify-content: flex-end;
 		background-image: url(assets/suggestions/desktop/background-header.png);
 		background-size: cover;
+		color: $white;
+
+		& span {
+			// @include body-2();
+			font-size: 15px;
+			line-height: 22px;
+			opacity: 0.75;
+		}
 	}
 
 	& .tagsCard {
 		display: flex;
 		gap: 14px;
 		flex-wrap: wrap;
+	}
+
+	& .roadmapCard {
+		& > div {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 20px;
+
+			& a, a:visited {
+				// @include body-3;  Not working, error: Undefined mixin
+				font-size: 13px;
+				font-weight: $font-weight-semibold;
+				color: $primary-blue;
+			}
+			
+		}
+
+		& li {
+			display: flex;
+			align-items: center;
+			padding: 4px 0;
+			line-height: 23px;
+
+			& .dot {
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				margin-right: 16px;
+			}
+
+			& .planned {
+				background-color: $light-orange;
+			}
+
+			& .inProgress {
+				background-color: $primary-purple;
+			}
+
+			& .live {
+				background-color: $light-blue;
+			}
+
+	
+			& .count {
+				margin-left: auto;
+				font-weight: $font-weight-bold;
+			}
+		}
 	}
 }
 

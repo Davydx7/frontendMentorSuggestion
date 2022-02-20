@@ -23,13 +23,25 @@ const Sidebar: React.FC<Props> = () => (
 		</div>
 		<div className="roadmapCard">
 			<div>
-				<span>Roadmap</span>
-				<Link to="/">view</Link>
+				<h3>Roadmap</h3>
+				<Link to="/">View</Link>
 			</div>
 			<ul>
-				<li>Planned</li>
-				<li>In-progress</li>
-				<li>Live</li>
+				<li>
+					<span className="dot planned" />
+					Planned
+					<span className="count">4</span>
+				</li>
+				<li>
+					<span className="dot inProgress" />
+					In-progress
+					<span className="count">3</span>
+				</li>
+				<li>
+					<span className="dot live" />
+					Live
+					<span className="count">5</span>
+				</li>
 			</ul>
 		</div>
 	</div>
