@@ -1,6 +1,7 @@
 .sidebar {
 	display: flex;
 	flex-direction: column;
+	position: relative;
 	gap: 24px;
 	width: 255px;
 	
@@ -16,14 +17,22 @@
 		flex-direction: column;
 		justify-content: flex-end;
 		background-image: url(assets/suggestions/desktop/background-header.png);
-		background-size: cover;
+		background-size: 100% 100%;
 		color: $white;
+
+		& h2 {
+			white-space: nowrap;
+		}
 
 		& span {
 			// @include body-2();
 			font-size: 15px;
 			line-height: 22px;
 			opacity: 0.75;
+		}
+
+		& .icon {
+			display: none;
 		}
 	}
 
@@ -80,8 +89,94 @@
 			}
 		}
 	}
+
+	& .overlay, .background {
+		display: none;
+	}
 }
 
-@media (max-width: 480px) {
+@media (max-width: $tablet) {
+	.sidebar{
+		width: 100%;
+		flex-direction: row;
+		gap: 10px;
 
+		& > div {
+			padding: 20px;
+			flex: 1;
+		}
+
+		& .hero {
+			height: auto;
+		}
+		
+		& .tagsCard {
+			// row-gap: 50%;
+			align-items: flex-start;
+			gap: 8px;
+		}
+	}
+}
+
+@media (max-width: $mobile) {
+	.sidebar{
+		width: 100%;
+
+		& > div {
+			padding: 20px;
+		}
+
+		& .hero {
+			// height: auto;
+			border-radius: 0;
+
+			& .icon {
+				display: block;
+				position: absolute;
+				top: 50%;
+				transform: translate(0, -50%);
+				right: 20px;
+			}
+		}
+		
+		& .tagsCard, .roadmapCard {
+			position: absolute;
+			width: 223px;
+			right: -250px;
+			transition: all 0.3s ease-in-out;
+			top: calc(100% + 100px);
+
+		}
+
+		& .tagsCard.show {
+			top: calc(100% + 24px);
+			right: 24px;
+		}
+
+		& .roadmapCard.show {
+			top: calc(100% + 200px);
+			right: 24px;
+		}
+
+		& .overlay.show {
+			position: absolute;
+			display: block;
+			border-radius: 0;
+			background-color: rgba(0, 0, 0, 0.5);
+			width: 100%;
+			height: 100vh;
+			z-index: -1;
+		}
+     
+		& .background.show {
+			position: absolute;
+			display: block;
+			border-radius: 0;
+			width: 271px;
+			height: 100vh;
+			right: 0;
+			background-color: $light-200;
+			z-index: -1;
+		}
+	}
 }
