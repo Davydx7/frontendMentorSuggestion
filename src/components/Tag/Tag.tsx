@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import React from 'react';
 
 import './Tag.scss';
 import { Props } from './typings';
@@ -7,26 +7,17 @@ import { Props } from './typings';
 const Tag: React.FC<Props> = ({
 	children,
 	clickable = false,
-	isSelected = false,
+	handleClick,
+	isSelected,
 	label,
-	onClick,
-}) => {
-	const [selected, setSelected] = useState(isSelected);
-
-	const handleClick = () => {
-		onClick?.();
-		setSelected(!selected);
-	};
-
-	return (
-		<span
-			className={classNames('tag', { '--clickable': clickable, '--selected': selected })}
-			onClick={handleClick}
-			role={clickable ? 'button' : 'status'}
-		>
-			{children || label}
-		</span>
-	);
-};
+}) => (
+	<span
+		className={classNames('tag', { '--clickable': clickable, '--selected': isSelected })}
+		onClick={handleClick}
+		role={clickable ? 'button' : 'status'}
+	>
+		{children || label}
+	</span>
+);
 
 export default Tag;
