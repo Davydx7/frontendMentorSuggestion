@@ -1,5 +1,13 @@
 @import url('./normalize.css');
 
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
 ul,
 li {
 	margin: 0;

@@ -1,0 +1,72 @@
+.header {
+	max-width: 700px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 10px;
+	background-color: $dark-100;
+	color: $white;
+	white-space: nowrap;
+
+	&.--suggestion {
+		padding: 14px 12px;
+
+		& .suggestion_counter {
+			margin: 0 16px;
+		}
+
+		& > span {
+			color: $light-100;
+		}
+
+		& > button {
+			margin-left: auto;
+		}
+	}
+
+	&.--roadmap {
+		padding: 27px 32px;
+
+		& > div {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+	}
+
+	& .dropdown__toggle-btn {
+		padding: 12px 5px;
+		color: $light-100;
+		border: none;
+		font-weight: $font-weight-bold;
+
+		&:hover,
+		&.--is-open {
+			border: none;
+			color: rgba($light-100, 0.75);
+		}
+
+		& path {
+			stroke: $white;
+		}
+	}
+}
+
+// till after variables-update is merged into dev
+// @media (max-width: $mobile) {
+@media (max-width: 600px) {
+	.header {
+		&.--suggestion {
+			padding: 8px 24px;
+
+			& .suggestion_counter,
+			.icon_bulb {
+				display: none;
+			}
+		}
+
+		&.--roadmap {
+			padding: 24px 24px;
+		}
+	}
+}
