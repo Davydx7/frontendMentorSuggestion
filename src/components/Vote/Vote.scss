@@ -1,0 +1,35 @@
+.vote {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	// padding: 5px 15px;
+	border-radius: 10px;
+	height: 53px;
+	width: 40px;
+	color: $txt-primary;
+	background-color: $tag-default;
+	font-size: 13px;
+	font-weight: $font-weight-bold;
+	transition: all 0.1s ease-in-out;
+
+	&:hover {
+		background-color: $tag-hover;
+	}
+
+	&.--row {
+		flex-direction: row;
+		height: 40px;
+		width: 69px;
+	}
+
+	&:active,
+	&.--selected {
+		color: $white;
+		background-color: $tag-active;
+
+		& path {
+			stroke: $white;
+		}
+	}
+}
