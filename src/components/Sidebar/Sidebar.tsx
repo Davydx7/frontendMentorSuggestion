@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './Sidebar.scss';
-import { Props } from './typings';
 
 import IconBar from 'assets/shared/icon-bar.svg';
 import IconCross from 'assets/shared/icon-cross.svg';
@@ -30,12 +29,42 @@ const Sidebar: React.FC<Props> = () => {
 					: <IconBar className="icon" onClick={() => setShow(true)} />}
 			</div>
 			<div className={classNames('tagsCard', { show })}>
-				<Tag clickable={true} handleClick={handleClick} isSelected={selected === 'Bug'} label="Bug" />
-				<Tag clickable={true} handleClick={handleClick} isSelected={selected === 'UI'} label="UI" />
-				<Tag clickable={true} handleClick={handleClick} isSelected={selected === 'UX'} label="UX" />
-				<Tag clickable={true} handleClick={handleClick} isSelected={selected === 'Feature'} label="Feature" />
-				<Tag clickable={true} handleClick={handleClick} isSelected={selected === 'Bug'} label="Bug" />
-				<Tag clickable={true} handleClick={handleClick} isSelected={selected === 'Enhancement'} label="Enhancement" />
+				<Tag
+					clickable={true}
+					isSelected={selected === 'Bug'}
+					label="Bug"
+					onClick={handleClick}
+				/>
+				<Tag
+					clickable={true}
+					isSelected={selected === 'UI'}
+					label="UI"
+					onClick={handleClick}
+				/>
+				<Tag
+					clickable={true}
+					isSelected={selected === 'UX'}
+					label="UX"
+					onClick={handleClick}
+				/>
+				<Tag
+					clickable={true}
+					isSelected={selected === 'Feature'}
+					label="Feature"
+					onClick={handleClick}
+				/>
+				<Tag
+					clickable={true}
+					isSelected={selected === 'Bug'}
+					label="Bug"
+					onClick={handleClick}
+				/>
+				<Tag
+					clickable={true}
+					isSelected={selected === 'Enhancement'}
+					label="Enhancement"
+					onClick={handleClick}
+				/>
 			</div>
 			<div className={classNames('roadmapCard', { show })}>
 				<div>
