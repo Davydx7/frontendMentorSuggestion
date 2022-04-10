@@ -9,12 +9,12 @@ import IconCross from 'assets/shared/icon-cross.svg';
 
 import Tag from 'components/Tag';
 
-const Sidebar: React.FC<Props> = () => {
+const Sidebar: React.FC = () => {
 	const [show, setShow] = useState(false);
 	const [selected, setSelected] = useState('UI');
 
-	const handleClick = (e) => {
-		setSelected(e.target.innerText);
+	const handleClick = (e: React.MouseEvent<HTMLSpanElement>) => {
+		setSelected(e.currentTarget.innerText);
 	};
 
 	return (
